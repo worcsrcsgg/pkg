@@ -27,5 +27,6 @@ ipset -N gfwlist iphash -!
 iptables -t nat -A PREROUTING -p tcp -s 192.168.31.110 -j REDIRECT --to-port 1081
 iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1081
 
-
+sudo ssserver -p 443 -k nihaohaha -m aes-256-cfb --user nobody -d start
+./socks5 -port 8443
 ```
